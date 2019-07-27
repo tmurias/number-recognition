@@ -1,7 +1,8 @@
 """Classify digits using Principal Component Analysis."""
-import utils
 import numpy as np
 from scipy.linalg import eigh
+
+import utils
 
 def main():
     x1600 = utils.csv_to_array('data/X1600.csv')
@@ -13,7 +14,7 @@ def main():
         print('    Training the digit ' + str(label))
         start_col = 1600*label
         end_col = start_col + 1600
-        data_points = x1600[:,start_col:end_col]
+        data_points = x1600[:, start_col:end_col]
         pa, avg = train(data_points, 29)
         paxes.append(pa)
         avgs.append(avg)
@@ -52,7 +53,7 @@ def main():
             errors.append(e)
 
         best_label = errors.index(min(errors))
-        if best_label != test_labels[0,col]:
+        if best_label != test_labels[0, col]:
             incorrect += 1
 
     print('Misclassified: ' + str(incorrect) + ' out of ' + str(num_points))
@@ -72,7 +73,7 @@ def train(data_points, q):
 
     # Eigenvectors corresponding to the q largest eigenvalues (ascending order)
     # These represent the principal axes
-    _, Uq = eigh(covariance, eigvals=[d-q,d-1])
+    _, Uq = eigh(covariance, eigvals=[d-q, d-1])
 
     # Switch to descending order
     Uq = np.fliplr(Uq)
@@ -82,4 +83,3 @@ def train(data_points, q):
 
 if __name__ == '__main__':
     main()
-
