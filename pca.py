@@ -7,7 +7,9 @@ def main():
     paxes = [] # Array of principal axes for each label
     avgs = [] # Average of all the data points for each label
 
+    print('Training the classifier using ' + str(np.size(x1600, 1)) + ' points...')
     for label in range(0, 10):
+        print('    Training the digit ' + str(label))
         start_col = 1600*label
         end_col = start_col + 1600
         data_points = x1600[:,start_col:end_col]
@@ -22,6 +24,7 @@ def main():
     incorrect = 0 # Number of incorrectly classified points
 
     # Classify each test point and compare it to the real labels
+    print('Classifying ' + str(num_points) + ' test points...')
     for col in range(num_points):
         x = test_points[:, col]
 
