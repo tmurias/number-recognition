@@ -3,7 +3,7 @@ import numpy as np
 from scipy.linalg import eigh
 
 def main():
-    x1600 = utils.csv_to_array('X1600.csv')
+    x1600 = utils.csv_to_array('data/X1600.csv')
     paxes = [] # Array of principal axes for each label
     avgs = [] # Average of all the data points for each label
 
@@ -15,8 +15,8 @@ def main():
         paxes.append(pa)
         avgs.append(avg)
 
-    test_points = utils.csv_to_array('Te28.csv')
-    test_labels = utils.csv_to_array('Lte28.csv').T
+    test_points = utils.csv_to_array('data/Te28.csv')
+    test_labels = utils.csv_to_array('data/Lte28.csv').T
 
     num_points = np.size(test_points, 1)
     incorrect = 0 # Number of incorrectly classified points
