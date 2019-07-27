@@ -1,3 +1,4 @@
+"""Classify digits using Principal Component Analysis."""
 import utils
 import numpy as np
 from scipy.linalg import eigh
