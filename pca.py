@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 """Classify digits using Principal Component Analysis."""
 import numpy as np
 from scipy.linalg import eigh
