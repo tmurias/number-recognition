@@ -11,3 +11,7 @@ This data was provided by UVic's ECE 403 course.
 
 ## PCA
 `pca.py` contains a Principal Component Analysis (PCA) algorithm for classification. Run `python3 pca.py` for results.
+
+## Required modules
+* `numpy`
+* `scipy`
