@@ -7,7 +7,7 @@ The sample data is in the `data/` directory. The handwritten digits (0-9) are 28
 * `Te28.csv` (728x10000) contains 10000 testing points
 * `Lte28.csv` (10000x1) contains the labels (scalar, 0-9) corresponding to the test points
 
-This data was provided by UVic's ECE 403 course.
+This data was provided by UVic's ECE 403 course and was originally intended to be used in MATLAB. It's the standard MNIST digits as far as I'm aware.
 
 ## PCA
 `pca.py` contains a Principal Component Analysis (PCA) algorithm for classification. Run `python3 pca.py` for results.
